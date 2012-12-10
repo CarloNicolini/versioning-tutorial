@@ -1,0 +1,121 @@
+\documentclass[10pt]{beamer}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+\usetheme{Berlin}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\beamertemplatenavigationsymbolsempty
+%\usepackage {pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage {verbatim}
+\pdfinfo
+{
+  /Title       (Software Versioning )
+  /Creator     (TeX)
+  /Author      (Carlo Nicolini)
+}
+
+\title{Software versioning overview}
+\subtitle{Subversion and Git at work}
+\author{Carlo Nicolini}
+\date{\today}
+
+\begin {document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% INTRODUZIONE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\begin{frame}
+\frametitle{Motivations}
+Science nowadays is (mainly) about writing code.
+\begin{block}{Programmer swiss-knife}
+\begin{itemize}
+\item<1-> A good book about the specific programming language (Matlab/Octave)
+\item<2-> A good text editor (Notepad++ on Windows, TextMate on Mac, gedit on Ubuntu)
+\item<3-> A good versioning system (Subversion or Git)
+\item<4-> A way to keep backups
+\end{itemize}
+\end{block}
+Everything else is accessory!
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Why versioning?}
+``Code doesn’t exist unless it’s checked into a version control system. Use version control for everything you do. Any version control, SVN, Git, even CVS, master it and use it.``
+
+\begin{block}{Have you ever?}
+\begin{small} 
+\begin{itemize}
+  \item  Made a change to code, realised it was a mistake and wanted to go back?
+  \item  Lost code or had a backup that was too old?
+  \item  Had to maintain multiple versions of a product?
+  \item  Wanted to see the difference between two (or more) versions of your code?
+  \item  Wanted to prove that a particular change broke or fixed some piece of code?
+  \item  Wanted to see how much work is being done (where/when/who)?
+  \item  Wanted to experiment with a new feature without interfering with working code?
+ \end{itemize}
+\end{small}
+\end{block}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Even if you work alone}
+You can always benefit from source control.
+\begin{itemize}
+ \item You don't lose anything.
+ \item You can experiment at will.
+\item You can revert!
+\item You can look back in older versions where bug has been introduced/resolved.
+\item You can see what changed.
+\end{itemize}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Is it for me?}
+The response is YES if
+\begin{itemize}
+\item You mess around with multiple versions of files, multiple dates of same file.
+\begin{itemize}
+ \item  \begin{verbatim} experiment_6_december_NEW.m \end{verbatim}
+ \item  \begin{verbatim} test_carlo_condition5_BACKUP.cpp \end{verbatim}
+\end{itemize}
+
+\item You have short memory
+\item You have fun trying new disrupting features.
+\item You like to collaborate with other persons.
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{What can I put under version control?}
+Everything! Every file can be put under version control, but you get the most benefit from textual file.
+\begin{block}{Files support}
+\textbf{Best support} .cpp, .h, .c, .txt, .m, .tex, etc...
+
+\textbf{Average support} Office files .doc, .docx, .pdf
+
+\textbf{Bare copy, inefficient pick up} Binaries, pdfs, images, movies etc
+\end{block}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Subversion} 
+Subversion (SVN) is one of the first tools.
+
+\end{frame}
+
+
+\end{document}
