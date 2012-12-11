@@ -106,15 +106,181 @@ Everything! Every file can be put under version control, but you get the most be
 
 \textbf{Bare copy, inefficient pick up} Binaries, pdfs, images, movies etc
 \end{block}
-
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Subversion} 
-Subversion (SVN) is one of the first tools.
+\begin{frame}[fragile]
+\frametitle{Subversion business logic}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.5\textwidth]{images/svn-step1.png}
+\end{figure}
+Immaginate un repository di Subversion come un grande magazzino di dati.
+Per ora non ci interessa conoscerlo in modo più tecnico e, tra l’altro, non è scopo di questo articolo.
 
+Il funzionamento base del sistema si può riassumere come segue
+working copy
+
+Ogni utente ha una copia del repository sul proprio computer (chiamata working copy).
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Centralized repository}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.5\textwidth]{images/svn-schema.png}
+\end{figure}
+Centralized repository in Subversion
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.35\textwidth]{images/image1.png}
+\end{figure}
+\begin{verbatim}
+svn co svn+ssh://cncsuser@193.205.214.36/home/svn/testrepo 
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.6\textwidth]{images/image2.png}
+\end{figure}
+\begin{verbatim}
+svn co svn+ssh://cncsuser@193.205.214.36/home/svn/testrepo 
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.6\textwidth]{images/image3.png}
+\end{figure}
+Insert your password here
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=1.0\textwidth]{images/image4.png}
+\end{figure}
+Here is the checkout log
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.5\textwidth]{images/image5.png}
+\end{figure}
+Green icon means that the repository has NO local modifications and is in sync with the last update.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/image6.png}
+\end{figure}
+Adding a new file, this will NOT be under version control!
+\begin{verbatim}
+ touch MyTextFile.txt
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/image7.png}
+\end{figure}
+Adding a new file, now it WILL be under version control
+\begin{verbatim}
+svn add MyTextFile.txt
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/image8.png}
+\end{figure}
+Commit the file addition, so the remote repository will be informed of our new file creation.
+\begin{verbatim}
+svn commit -m "added a new file MyTextFile.txt to the repository"
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/image9.png}
+\end{figure}
+\begin{verbatim}
+svn commit -m "added a new file MyTextFile.txt"
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=1.0\textwidth]{images/image10.png}
+\end{figure}
+SVN log while committing to remote repository. You must see NO errors or red texts!
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=1.0\textwidth]{images/image11.png}
+\end{figure}
+Doing modification on our file, will make the green icon red, because is locally modified
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/image12.png}
+\end{figure}
+Commit again to push the local modifications to the remote repository
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Example usage}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/image13.png}
+\end{figure}
+\begin{verbatim}
+ svn commit -m "written some text."
+\end{verbatim}
 \end{frame}
 
 
