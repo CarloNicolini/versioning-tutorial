@@ -111,7 +111,27 @@ Everything! Every file can be put under version control, but you get the most be
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-\frametitle{Subversion business logic}
+\frametitle{Subversion business logic - Working copy}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.5\textwidth]{images/svn-step2.png}
+\end{figure}
+L’utente esegue le modifiche sulla propria copia locale e, al termine, invia al repository remoto gli aggiornamenti.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Subversion business logic - Working copy}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.5\textwidth]{images/svn-step2.png}
+\end{figure}
+L’utente esegue le modifiche sulla propria copia locale e, al termine, invia al repository remoto gli aggiornamenti.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Subversion business logic - Edit}
 \begin{figure}[h]
  \centering
  \includegraphics[width=0.5\textwidth]{images/svn-step1.png}
@@ -121,9 +141,47 @@ Per ora non ci interessa conoscerlo in modo più tecnico e, tra l’altro, non �
 
 Il funzionamento base del sistema si può riassumere come segue
 working copy
-
 Ogni utente ha una copia del repository sul proprio computer (chiamata working copy).
+\end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Subversion business logic - Sending local edits}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.5\textwidth]{images/svn-step2.png}
+\end{figure}
+Il repository riceve gli aggiornamenti, aggiorna la copia remota ed assegna un nuovo numero progressivo alla revisione.
+update contemporanei
+
+A questo punto, chiunque può disporre della versione aggiornata. Nel caso in cui qualcuno tenti di inviare delle modifiche ad un file appena aggiornato, il repository inverà un messaggio d’avviso.
+Attraverso i tool di SVN è possibile gestire quale revisione e quale singola modifica deve essere mantenuta.
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Subversion business logic - Handling conflicts}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.5\textwidth]{images/svn-step3.png}
+\end{figure}
+A questo punto, chiunque può disporre della versione aggiornata. Nel caso in cui qualcuno tenti di inviare delle modifiche ad un file appena aggiornato, il repository inverà un messaggio d’avviso.
+Attraverso i tool di SVN è possibile gestire quale revisione e quale singola modifica deve essere mantenuta.
+In caso di conflitto, è possibile gestire il merge delle revisioni.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Subversion business logic - Handling conflicts}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.5\textwidth]{images/svn-step4.png}
+\end{figure}
+A questo punto, chiunque può disporre della versione aggiornata. Nel caso in cui qualcuno tenti di inviare delle modifiche ad un file appena aggiornato, il repository inverà un messaggio d’avviso.
+Attraverso i tool di SVN è possibile gestire quale revisione e quale singola modifica deve essere mantenuta.
+In caso di conflitto, è possibile gestire il merge delle revisioni.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
