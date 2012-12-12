@@ -131,8 +131,7 @@ Centralized repository in Subversion
  \centering
  \includegraphics[width=0.5\textwidth]{images/svn-step2.png}
 \end{figure}
-User work on his working copy and finally send the modifications to 
-L’utente esegue le modifiche sulla propria copia locale e, al termine, invia al repository remoto gli aggiornamenti.
+User works on his own working copy and finally sends his modifications to remote repository.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,7 +141,7 @@ L’utente esegue le modifiche sulla propria copia locale e, al termine, invia a
  \centering
  \includegraphics[width=0.5\textwidth]{images/svn-step2.png}
 \end{figure}
-L’utente esegue le modifiche sulla propria copia locale e, al termine, invia al repository remoto gli aggiornamenti.
+User works on his own working copy and finally sends his modifications to remote repository.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -152,12 +151,8 @@ L’utente esegue le modifiche sulla propria copia locale e, al termine, invia a
  \centering
  \includegraphics[width=0.5\textwidth]{images/svn-step1.png}
 \end{figure}
-Immaginate un repository di Subversion come un grande magazzino di dati.
-Per ora non ci interessa conoscerlo in modo più tecnico e, tra l’altro, non è scopo di questo articolo.
-
-Il funzionamento base del sistema si può riassumere come segue
-working copy
-Ogni utente ha una copia del repository sul proprio computer (chiamata working copy).
+A repository is like a data store.
+Every user has a copy of the repository on his own computer (working copy)
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,11 +162,7 @@ Ogni utente ha una copia del repository sul proprio computer (chiamata working c
  \centering
  \includegraphics[width=0.5\textwidth]{images/svn-step2.png}
 \end{figure}
-Il repository riceve gli aggiornamenti, aggiorna la copia remota ed assegna un nuovo numero progressivo alla revisione.
-update contemporanei
-
-A questo punto, chiunque può disporre della versione aggiornata. Nel caso in cui qualcuno tenti di inviare delle modifiche ad un file appena aggiornato, il repository inverà un messaggio d’avviso.
-Attraverso i tool di SVN è possibile gestire quale revisione e quale singola modifica deve essere mantenuta.
+The repository gets the ''commit'' from users, updates its internal status and increases the revision number.
 \end{frame}
 
 
@@ -348,5 +339,38 @@ Commit again to push the local modifications to the remote repository
 \end{verbatim}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Keeping track of history}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/image14.png}
+\end{figure}
+\begin{verbatim}
+ svn log | head -100
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Keeping track of history}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/image15.png}
+\end{figure}
+\begin{verbatim}
+ svn log | head -100
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{How to avoid getting prompted for password (TortoiseSVN)}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/image16.png}
+\end{figure}
+WARNING: password is visible to everyone
+\end{frame}
 
 \end{document}
